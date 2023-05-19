@@ -1,3 +1,5 @@
+import 'package:cardapio/domain/lanche.dart';
+import 'package:cardapio/presentation/lanche_page.dart';
 import 'package:cardapio/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -20,6 +22,10 @@ class Aplicacao extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/':(context) => const HomePage(),
+        '/lanche':(context){
+          var lanche = ModalRoute.of(context)!.settings.arguments as Lanche; // a variável ganha os argumentos dados ao OBJETO
+          return LanchePage(lanche: lanche);
+        }
       },
     );
   }

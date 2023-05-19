@@ -17,17 +17,17 @@ echo "windows" >> .gitignore
 echo "macos" >> .gitignore
 echo "linux" >> .gitignore
 
-rm -Rf .git
+# rm -Rf .git
 
-git init
-git remote add origin $repositorio
-git checkout -b $branch_name
+# git init
+# git remote add origin $repositorio
+# git checkout -b $branch_name
 
-git config --global user.name $name
-git config --global user.email $email
+# git config --global user.name $name
+# git config --global user.email $email
 
-git add .gitignore
-git commit -m "added ignored files" .gitignore
+# git add .gitignore
+# git commit -m "added ignored files" .gitignore
 
 git add .
 

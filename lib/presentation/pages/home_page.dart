@@ -14,16 +14,25 @@ class HomePage extends StatelessWidget {
         title: const Text('Cardapio'),
       ),
       body: ListView.separated(
-          itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(lanches[index].nome),
-                    Text(moeda.format(lanches[index].preco.toString()))
-                  ],
+          itemBuilder: (context, index) => GestureDetector(
+            onTap: (){ // onTap dispara um evento de click
+            Navigator.pushNamed(
+              context,
+              '/lanche',
+              arguments: lanches[index],
+              );
+            },
+            child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(lanches[index].nome),
+                      Text(moeda.format(lanches[index].preco))
+                    ],
+                  ),
                 ),
-              ),
+          ),
           separatorBuilder: (context, index) => const Divider(),
           itemCount: lanches.length),
     );
